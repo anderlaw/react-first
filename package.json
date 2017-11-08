@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^2.13.9",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-scripts": "1.0.17"
@@ -12,5 +13,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.6.2"
   }
 }
