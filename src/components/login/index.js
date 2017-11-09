@@ -2,10 +2,10 @@ import React from 'react'
 //引入组件
 import {
     LoginIn
-} from './loginBtn'
+} from './login'
 import {
     LoginOut
-} from './logoutbtn'
+} from './logout'
 
 class LoginControl extends React.Component {
     constructor(props) {
@@ -28,16 +28,16 @@ class LoginControl extends React.Component {
         const isLogin = this.state.isLogin;
         return (
             <div>
-                状态:{ isLogin ?(
+                { isLogin ?(
                     <div>
-                        <span> 状态:已登录 </span>
-                        <LoginIn onClick= { this.handleLogout }></LoginIn>
+                        <span> 状态:<span style={{ color:'red' }}>已登录</span> </span>
+                        <LoginOut onClick= { this.handleLogout }/>
                     </div>
                     
                 ) : (
                     <div>
-                        <span> 状态:待登录 </span>
-                        <LoginOut onClick={ this.handleLogin }></LoginOut>
+                        <span> 状态:<span style={{ color:'red' }}>待登录</span> </span>
+                        <LoginIn onClick={ this.handleLogin }/>
                     </div>
                 )}
 

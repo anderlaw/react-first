@@ -1,20 +1,18 @@
 .list{
     padding-left: 200px;
+    height: 50px;
 }
-.list:after{
-    content:'';
-    height: 0;
-    display: block;
-    clear: both;
-}
+
 .list li{
     float: left;
     line-height: 50px;
     height: 50px;
+    font-size: 18px;
+    font-weight: bold;
 }
 .list li a{
     display: inline-block;
     padding: 5px 10px;
-    color: #000;
+    color: #9c2952;
     text-decoration: none;
 }

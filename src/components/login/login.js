@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
-function LoginOut(props){
+function LoginIn(props){
     return (
         <button onClick={props.onClick}>登录</button>
     )
 }
-export {LoginOut}
+export {LoginIn}

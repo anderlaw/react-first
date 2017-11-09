@@ -8,3 +8,9 @@
 li{
   list-style: none;
 }
+.comp{
+  color: red;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 16px;
+}

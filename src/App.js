@@ -2,63 +2,40 @@ import React, { Component } from 'react';
 import logo from './logo.png';
 import './App.css';
 
-//引入组件Menu
-import {Menu} from './components/center'
 //引入device组件
-import {Nav} from './components/device'
+import {Nav} from './components/nav'
 //引入greetings组件
-import {LoginControl} from './components/greetings'
-// 引入list组件
-import { List } from './components/list' 
+import {LoginControl} from './components/login'
+ 
+//引入 用户信息组件和头像
+import { UserInfor }from './components/userinfo' 
+import avatar from './avatar.jpg' 
+//引入时钟组件
+import { Clock } from './components/clock'
+//引入表单组件
+import { Forms } from './components/forms'
+
 class App extends Component {
   constructor(props){
     super(props);
-
-    //初始化 状态
-    this.state = {
-      date:new Date(),
-      comments:0
-    }
-  }
-
-  componentDidMount(){
-    this.timerID = setInterval(()=>this.tick(),1000)
-
-    setInterval(()=>this.setState((pre,props)=>({
-      comments:pre.comments+1
-    })),1000)
-    
-  }
-  componentWillUnmount(){
-    clearInterval(this.timerID)
-  }
-  tick(){
-    this.setState({
-      date:new Date()
-    })
-    
   }
   render() {
     return (
-      <div className="newapp" style={{ textAlign:'center'}}>
+      <div className="newapp">
+        <h1 className="comp">引入的图片组件</h1>
         <img src={ logo } height="80px"/>
-        <h2> 现在时刻: { this.state.date.toLocaleTimeString() } </h2>
-        <p>总评论数:{ this.state.comments }</p>
-        <div>
-          <span>引入的Nav组件</span>
-          <Nav date={new Date()} />
-        </div>
-        <div>
-          <span>引入的Menu组件</span>
-          <Menu date={new Date()} />
-        </div>
+        <h1 className="comp">引入的Nav组件</h1>
+        <Nav items={['主页','关于我们','产品介绍','加入我们']} />
+        <h1 className="comp">引入的loginControl组件</h1>
         <div>
           <LoginControl/>
         </div>
-        <div>
-          <span style={{ color:'blue' }}>引入的List组件</span>
-          <List/>
-        </div>
+        <h1 className="comp">引入的用户信息组件</h1>
+        <UserInfor user={ { avatar:avatar,name:'何泽兵' } } fans={ {count:8 }} />
+        <h1 className="comp">引入的时钟组件</h1>
+        <Clock  />
+        <h1 className="comp">引入的表单组件</h1>
+        <Forms/>
       </div>
     )
   }

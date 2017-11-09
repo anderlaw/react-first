@@ -5,11 +5,10 @@ class Nav extends React.Component {
         super(props)
     }
     render(){
+        const items = this.props.items.map((item,index)=><li key={index}><a href="" onClick={this.handleClick.bind(this,item)}>{ item }</a> </li>)
         return (
             <ul className="list">
-                <li><a href="" onClick={ this.handleClick.bind(this,'主页') }> 主页 </a></li>
-                <li><a href="" onClick={ this.handleClick.bind(this,'产品') }> 产品简介 </a></li>
-                <li><a href="" onClick={ this.handleClick.bind(this,'关于我们') }> 关于我们 </a></li>
+                {items}
             </ul>
         )   
     }
